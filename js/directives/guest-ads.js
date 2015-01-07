@@ -1,3 +1,8 @@
-/**
- * Created by P. Ivanov on 6.1.2015 г..
- */
+app.directive('guestAds', function() {
+    return {
+        controller: 'GuestAdsCtrl',
+        restrict: 'E',
+        templateUrl: 'templates/guest/guest-ads.html',
+        replace: true
+    };
+});
