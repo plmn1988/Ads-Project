@@ -2,8 +2,8 @@ app.factory('adsData',['$resource', 'baseServiceUrl', function($resource, baseSe
     var resource = $resource(baseServiceUrl + 'ads:adId', {adId: '@id'}, {
         update: { method: 'PUT'}
     });
-    function getGuestAds () {
-        return resource.get();
+    function getGuestAds (filterParams) {
+        return resource.get(filterParams);
     }
     function editAd (adId, ad) {
         return resource.update({ id: adId }, ad);
